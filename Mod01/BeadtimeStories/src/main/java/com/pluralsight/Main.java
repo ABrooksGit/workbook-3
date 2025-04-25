@@ -59,8 +59,8 @@ public class Main {
     }
     private static void ReadGoldiLocks(){
         try {
-            FileInputStream goldilocks = new FileInputStream("goldilocks.txt");
-            Scanner scanner = new Scanner(goldilocks);
+            FileInputStream storyTime = new FileInputStream("goldilocks.txt");
+            Scanner scanner = new Scanner(storyTime);
 
             String input;
 
@@ -76,8 +76,8 @@ public class Main {
         }
     private static void ReadHanselAndGretel(){
         try {
-            FileInputStream goldilocks = new FileInputStream("hansel_and_gretel.txt");
-            Scanner scanner = new Scanner(goldilocks);
+            FileInputStream storyTime = new FileInputStream("hansel_and_gretel.txt");
+            Scanner scanner = new Scanner(storyTime);
 
             String input;
 
@@ -93,8 +93,8 @@ public class Main {
     }
     private static void ReadMaryHadALittleLamb(){
         try {
-            FileInputStream goldilocks = new FileInputStream("mary_had_a_little_lamb.txt");
-            Scanner scanner = new Scanner(goldilocks);
+            FileInputStream storyTime = new FileInputStream("mary_had_a_little_lamb.txt");
+            Scanner scanner = new Scanner(storyTime);
 
             String input;
 
