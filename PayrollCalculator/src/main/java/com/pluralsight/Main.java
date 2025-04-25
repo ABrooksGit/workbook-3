@@ -1,29 +1,21 @@
 package com.pluralsight;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.regex.Pattern;
 
 
 public class Main {
-
-    private static Employee[] employees = getReadingFile();
     private static Console console = new Console();
+    private static Employee[] employees;
+
 
     public static void main(String[] args) {
         // Must Display as id|name|hours-worked|pay-rate
 
-//        getReadingFile();
-//        for (int i = 0; i < employees.length; i++) {
-//            if (employees[i] != null) {
-//                //System.out.println(employees[i].formatEmployeeInformation());
-//                System.out.printf("%2d|%2s|%.1f|%.1f\n", employees[i].getEmployeeId(), employees[i].getName(), employees[i].getHoursWorked(), employees[i].getPayRate());
-//
-//                System.out.println(employees[i].getGrossPay() + "|" + employees[i].getName() + "'s Total Pay" + "\n");
-//            }
-//
-//
-//        }
+        employees = getReadingFile();
 
+
+
+        writeToCsvFile();
 
 
 
@@ -34,10 +26,17 @@ public class Main {
 
 
     private static Employee[] getReadingFile() {
+        //Prompt for the user to select which file
+        String readFilePrompt = "Enter the name of the file employee file to process: ";
+
         try {
-            FileReader fr = new FileReader("file.csv");
+            //Read from a file that is already present
+            String employeeFile = console.promptForString(readFilePrompt);
+            FileReader fr = new FileReader(employeeFile);
             BufferedReader reader = new BufferedReader(fr);
 
+
+            //Make sure the array has enough Employees
             Employee[] employeesFiles = new Employee[1000];
 
             int size = 0;
@@ -48,11 +47,13 @@ public class Main {
 
                 size++;
             }
+
+
             return employeesFiles;
 
         } catch (Exception e) {
-            System.out.println("Error");
-            return new Employee[0];
+            throw new RuntimeException(e);
+
         }
 
 
@@ -75,11 +76,29 @@ public class Main {
 
 
     private static void writeToCsvFile(){
-        console.promptForString("Enter the name of the file employee file to process: ");
-        console.promptForString("Enter the name of the payroll file to create: ");
+        try {
+            //Ask the user to input the file they wish to create
+            String payRollFile = console.promptForString("Enter the name of the payroll file to create: ");
+            FileWriter fileWriter = new FileWriter(payRollFile,false);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
+
+            //Apply Array to new file
+            for (Employee employee : employees) {
+                if (employee != null) {
+                    payRollFile = (String.format("ID %2d|Employee %s|GrossPay %.1f\n",
+                            employee.getEmployeeId(),
+                            employee.getName(),
+                            employee.getGrossPay()));
+                    bufferedWriter.write(payRollFile);
+                }
+            }
+            //Makes sure the text gets added
+            bufferedWriter.close();
+
+            } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
-
-
 
 }

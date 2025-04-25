@@ -1,5 +1,9 @@
 package com.pluralsight;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Employee {
 
     private int employeeId;
@@ -75,6 +79,23 @@ public class Employee {
         return String.format("%2d %2s %.1f %.1f", this.employeeId, this.name, this.hoursWorked, this.payRate);
     }
 
+//    public String formatProcess(){
+//        try {
+//            FileWriter fileWriter = new FileWriter("file2.csv");
+//            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+//            String text;
+//            {
+//               text = String.format("Employee #%s", this.getName());
+//                bufferedWriter.write(text);
+//            }
+//            bufferedWriter.close();
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        return String.format("Employee #%s", this.getName());
+//    }
+//
 
 
 }
