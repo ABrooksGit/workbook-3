@@ -8,12 +8,10 @@ import java.time.format.DateTimeFormatter;
 public class Main {
     public static void main(String[] args) {
         LocalDateTime today = LocalDateTime.now();
-        LocalTime time = LocalTime.now();
         LocalDate date = LocalDate.now();
         DateTimeFormatter od = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         String formattedDate = date.format(od);
         System.out.println(formattedDate);
-        //System.out.println(today.getMonthValue() + "/" + today.getDayOfMonth() + "/" + today.getYear());
         System.out.println(today.getYear() + "-" + today.getMonthValue() + "-" + today.getDayOfMonth());
         System.out.println(today.getMonth() + " "+ today.getDayOfMonth() + " " + today.getYear());
         DateTimeFormatter fmt =
@@ -24,6 +22,8 @@ public class Main {
     }
 }
 
+//        LocalTime time = LocalTime.now();
+//System.out.println(today.getMonthValue() + "/" + today.getDayOfMonth() + "/" + today.getYear());
 //        LocalDateTime rightNow = LocalDateTime.now();
 //        System.out.println(today);
 //        System.out.println(time);
