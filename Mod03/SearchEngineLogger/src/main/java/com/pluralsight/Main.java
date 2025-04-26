@@ -22,7 +22,7 @@ public class Main {
             beginSearch();
 
 
-            
+
         } else {
             System.out.println("Incorrect word, please use launch to start");
 
