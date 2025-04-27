@@ -14,7 +14,7 @@ public class Main {
 
         for(int i = 0; i < inventory.size(); i++){
             Product product  = inventory.get(i);
-                System.out.printf("id: %d| %s  Price| $%.2f\n", product.getId(), product.getName(), product.getPrice());
+                System.out.printf("id: %d| %s |Price: $%.2f\n", product.getId(), product.getName(), product.getPrice());
 
             }
         }
