@@ -40,7 +40,7 @@ public class Product {
 
     public String format(){
 
-        return id + "|" + name + "|" +  price;
+        return this.id + "|" + this.name + "|" +  this.price;
     }
 
 }
