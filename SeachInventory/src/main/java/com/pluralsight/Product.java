@@ -35,6 +35,12 @@ public class Product {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    public String setFormat(){
+        return this.id + "|" + this.name + "|" +  this.price;
+
+    }
+
 }
 
 

@@ -1,4 +1,5 @@
 4567|SmartPhone|599.99
-1234|Tablet|299.99
 2345|SmartWatch|199.99
+5678|Laptop|799.99
 3245|HeadPhones|99.99
+1234|Tablet|299.99
